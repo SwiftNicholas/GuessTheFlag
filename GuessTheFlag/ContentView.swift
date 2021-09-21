@@ -57,6 +57,10 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+                
+                Text("Current Score: \(score)")
+                    .foregroundColor(.white)
+                
             }.padding(.top, 50)
             .alert(isPresented: $showingScore){
                 Alert(
@@ -78,7 +82,7 @@ struct ContentView: View {
                 scoreTitle = "Correct"
                 score += 1
             } else {
-                scoreTitle = "Wrong"
+                scoreTitle = "Incorrect: \n This is the flag of \(countries[number])"
                 score -= 1
             }
             showingScore = true
